@@ -1,0 +1,46 @@
+---
+bibliography: references.bib
+format: pdf
+lang: pt-BR
+nocite: "@*"
+documentclass: scrreprt
+header-includes:
+    - \addtokomafont{chapter}{\Large}
+---
+
+\thesisSettings
+
+{{< include resources/thesis/cover.qmd >}}
+{{< include resources/thesis/catalographic_index.qmd >}}
+{{< include resources/thesis/signatures.qmd >}}
+{{< include resources/thesis/thanks.qmd >}}
+{{< include resources/thesis/abstract_pt.qmd >}}
+{{< include resources/thesis/abstract_en.qmd >}}
+{{< include resources/thesis/lists.qmd >}}
+
+# Introduction
+
+\header{Introduction}
+
+\lipsum[5]
+
+{{< pagebreak >}}
+
+# Main body
+
+\header{Main body}
+
+{{< pagebreak >}}
+
+# Conclusion
+
+\header{Conclusion}
+
+{{< pagebreak >}}
+
+# References {.unnumbered}
+
+\referenceStyle
+
+::: {#refs}
+:::

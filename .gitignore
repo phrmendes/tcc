@@ -1,0 +1,6 @@
+.direnv
+.mamba
+/.quarto/
+# pixi environments
+.pixi
+
