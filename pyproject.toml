@@ -1,0 +1,34 @@
+[project]
+name = "thesis"
+version = "0.1.0"
+description = " My economics bachelor's thesis (UFABC) "
+authors = [{ name = "Pedro Mendes", email = "pedrohrmendes@proton.me" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+keywords = ["lstm", "machine learning", "steam", "sazonality"]
+
+[tool.pyright]
+typeCheckingMode = "basic"
+useLibraryCodeForTypes = true
+venvPath = "."
+venv = ".pixi"
+
+[tool.jupytext]
+formats = "ipynb,py:percent"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+indent-width = 4
+select = ["ALL"]
+exclude = ["__pycache__", ".git", ".ipynb_checkpoints", ".pixi", ".ruff_cache"]
+
+ignore = [
+  "ANN101", # missing type annotation for self in method
+  "ARG001", # unused function argument
+  "D100",   # missing docstring in public module
+  "D103",   # missing docstring in public function
+  "S603",   # subprocess call - check for execution of untrusted input
+  "T201",   # print statement used in code
+]

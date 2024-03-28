@@ -2,7 +2,7 @@ format:
   pdf:
     cap-location: top
     colorlinks: true
-    csl: abnt.csl
+    csl: ./resources/references/abnt.csl
     fig-pos: "H"
     fontsize: 12pt
     geometry:
@@ -11,9 +11,9 @@ format:
       - left=2.5cm
       - right=2.5cm
     include-in-header:
-      - resources/packages.tex
-      - resources/commands.tex
-      - resources/settings.tex
+      - ./resources/tex/packages.tex
+      - ./resources/tex/commands.tex
+      - ./resources/tex/settings.tex
     keep-tex: true
     link-citations: true
     pdf-engine: tectonic

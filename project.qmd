@@ -2,8 +2,8 @@
 title: Aprendizado de máquina aplicado a previsão de retornos de ativos virtuais no Mercado da Comunidade Steam
 author:
     - Pedro Mendes
-    - André Ricardo Oliveira da Fonseca^[Professor orientador -- Centro de Matemática Computação e Cognição (CMCC/UFABC).]
-bibliography: references.bib
+    - André Ricardo Oliveira da Fonseca^[Professor orientador - Centro de Matemática Computação e Cognição (CMCC/UFABC).]
+bibliography: ./resources/references/references.bib
 documentclass: scrartcl
 format: pdf
 nocite: "@*"
@@ -15,15 +15,9 @@ header-includes:
 ```{=tex}
 \oneHalfIndent
 ```
-# Descrição
+# Introdução
 
 Este projeto se propõe a usar técnicas de aprendizado de máquina para prever o retorno de ativos virtuais no Mercado da Comunidade Steam (MCS).^[Disponível em: <https://steamcommunity.com/market>. Acesso em: 19 nov 2023.] O MCS é um mercado virtual secundário onde usuários podem comprar e vender itens virtuais para jogos da plataforma Steam, uma loja de jogos online. O mercado é composto por itens de jogos como Counter-Strike: Global Offensive, Dota 2, Team Fortress 2, entre outros. Os itens são negociados na moeda corrente da conta utilizada e a plataforma retém 15% do valor da transação. O restante é creditado na carteira do usuário, que pode ser usado para adquirir outros itens ou jogos na plataforma.^[Disponível em: <https://help.steampowered.com/en/faqs/view/61F0-72B7-9A18-C70B>. Acesso em: 19 nov 2023.] O preço dos ativos é determinado pela oferta e demanda dos usuários, podendo variar ao longo do tempo. A análise de mercados virtuais pode ser uma importante ferramenta para testar hipóteses econômicas, pois modelar um sistema fechado com poucas variáveis a serem analisadas permite abstrair a complexidade de mercados reais.
-
-# Hipóteses
-
-- Hipótese 1: O uso do modelo de aprendizado de máquina Long Short Term Memory (LSTM) é adequado para predizer os rendimentos dos ativos virtuais no contexto do MCS.^[A escolha do modelo é detalhada na seção de metodologia.]
-- Hipótese 2: Existem padrões sazonais no comportamento dos preços dos ativos virtuais no MCS, influenciados por eventos como promoções sazonais e lançamentos de jogos populares.
-- Hipótese 3: É possível criar um portfólio de ativos tal que seu retorno seja superior à retenção de 15% do valor da transação cobrado pela plataforma Steam.
 
 # Objetivos
 
@@ -31,10 +25,20 @@ Como objetivo geral, este trabalho planeja utilizar técnicas de aprendizado de 
 
 Como objetivos específicos, este trabalho se propõe a:
 
-- Realizar uma análise qualitativa das regras da plataforma;
+- Realizar uma análise qualitativa das regras da plataforma, a fim de entender o funcionamento do mercado e as possíveis limitações para a coleta de dados;
 - Analisar os principais ativos negociáveis por meio de estatística descritiva;
 - Desenvolver um modelo estatístico que se baseie em técnicas de aprendizado de máquina;
 - Medir o desempenho do modelo utilizado.
+
+# Problema
+
+O problema central deste projeto reside na capacidade de prever os retornos dos ativos virtuais no Mercado da Comunidade Steam (MCS) por meio de técnicas de aprendizado de máquina. O contexto inclui a investigação de padrões sazonais nos preços dos ativos, como influenciados por eventos sazonais e lançamentos de jogos, bem como a possibilidade de construir um portfólio de ativos com retornos superiores à retenção de 15% do valor da transação cobrado pela plataforma Steam.
+
+# Hipóteses
+
+- Hipótese 1: O uso do modelo de aprendizado de máquina Long Short Term Memory (LSTM) é adequado para predizer os rendimentos dos ativos virtuais no contexto do MCS.^[A escolha do modelo é detalhada na seção de metodologia.]
+- Hipótese 2: Existem padrões sazonais no comportamento dos preços dos ativos virtuais no MCS, influenciados por eventos como promoções sazonais e lançamentos de jogos populares.
+- Hipótese 3: É possível criar um portfólio de ativos tal que seu retorno seja superior à retenção de 15% do valor da transação cobrado pela plataforma Steam.
 
 # Justificativa
 
@@ -63,7 +67,7 @@ Os trabalhos de @shaferTutorialConformalPrediction2008 e @angelopoulosGentleIntr
 # Cronograma
 
 ```{=tex}
-\input{resources/planning.tex}
+\input{./resources/tex/planning.tex}
 ```
 
 # Referências
