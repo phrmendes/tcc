@@ -1,18 +1,44 @@
-[project]
+[tool.poetry]
 name = "thesis"
 version = "0.1.0"
-description = " My economics bachelor's thesis (UFABC) "
-authors = [{ name = "Pedro Mendes", email = "pedrohrmendes@proton.me" }]
+description = "My economics bachelor's thesis (UFABC)"
+authors = ["Pedro Mendes <pedrohrmendes@proton.me>"]
 readme = "README.md"
-license = { file = "LICENSE" }
-requires-python = ">=3.12"
-keywords = ["lstm", "machine learning", "steam", "sazonality"]
+repository = "https://github.com/phrmendes/thesis"
+keywords = ["lstm", "machine learning", "statistics", "thesis", "time-series"]
+license = "GPL-3.0"
+
+[tool.poetry.dependencies]
+keras = "^3.1.1"
+mapie = "^0.8.3"
+matplotlib = "^3.8.3"
+numpy = "^1.26.4"
+pandas = "^2.2.1"
+pyarrow = "^15.0.2"
+python = "^3.12"
+requests = "^2.31.0"
+scikit-learn = "^1.4.1.post1"
+scipy = "^1.12.0"
+statsmodels = "^0.14.1"
+tensorflow = "^2.16.1"
+
+[tool.poetry.group.dev.dependencies]
+debugpy = "^1.8.1"
+ipython = "^8.22.2"
+jupyterlab = "^4.1.5"
+jupytext = "^1.16.1"
+
+[tool.poetry.group.gpu.dependencies]
+tensorflow = { extras = ["and-cuda"], version = "^2.16.1" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.pyright]
 typeCheckingMode = "basic"
 useLibraryCodeForTypes = true
-venvPath = "./.mamba/envs/"
-venv = "thesis"
+venvPath = ".venv"
 
 [tool.jupytext]
 formats = "ipynb,py:percent"
@@ -22,7 +48,7 @@ target-version = "py312"
 line-length = 88
 indent-width = 4
 select = ["ALL"]
-exclude = ["__pycache__", ".git", ".ipynb_checkpoints", ".pixi", ".ruff_cache"]
+exclude = [".git", ".ruff_cache", "__pycache__"]
 
 ignore = [
   "ANN101", # missing type annotation for self in method

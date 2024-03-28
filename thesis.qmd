@@ -1,22 +1,22 @@
 ---
-bibliography: references.bib
 format: pdf
 lang: pt-BR
 nocite: "@*"
 documentclass: scrreprt
+bibliography: ./quarto/references.bib
 header-includes:
     - \addtokomafont{chapter}{\Large}
 ---
 
 \thesisSettings
 
-{{< include resources/thesis/cover.qmd >}}
-{{< include resources/thesis/catalographic_index.qmd >}}
-{{< include resources/thesis/signatures.qmd >}}
-{{< include resources/thesis/thanks.qmd >}}
-{{< include resources/thesis/abstract_pt.qmd >}}
-{{< include resources/thesis/abstract_en.qmd >}}
-{{< include resources/thesis/lists.qmd >}}
+{{< include ./quarto/preamble/cover.qmd >}}
+{{< include ./quarto/preamble/catalographic_index.qmd >}}
+{{< include ./quarto/preamble/signatures.qmd >}}
+{{< include ./quarto/preamble/thanks.qmd >}}
+{{< include ./quarto/preamble/abstract_pt.qmd >}}
+{{< include ./quarto/preamble/abstract_en.qmd >}}
+{{< include ./quarto/preamble/lists.qmd >}}
 
 # Introduction
 

@@ -15,33 +15,35 @@
       system: let
         pkgs = import nixpkgs {
           inherit system;
-          config.allowUnfree = true;
+          config = {
+            allowUnfree = true;
+            cudaSupport = true;
+            allowBroken = true;
+          };
         };
         fhs = pkgs.buildFHSUserEnv {
           name = "thesis";
-          targetPkgs = pkgs: (with pkgs; [micromamba]);
-          profile = ''
-            export MAMBA_ROOT_PREFIX="./.mamba"
-            export DEPENDENCIES
 
-            eval "$(micromamba shell hook --shell=posix)"
-
-            if [[ -f "./env.yml" ]]; then
-              DEPENDENCIES="-f env.yml"
-            fi
-
-            if [[ -f "./conda-lock.yml" ]]; then
-              DEPENDENCIES+=" -f conda-lock.yml"
-            fi
-
-            if [[ -d "./.mamba" ]]; then
-              micromamba update $DEPENDENCIES --yes
-            else
-              micromamba create $DEPENDENCIES --yes
-            fi
-
-            micromamba activate thesis
+          profile = with pkgs; ''
+            export LD_LIBRARY_PATH=${cudaPackages.cudatoolkit.lib}/lib:$LD_LIBRARY_PATH
+            export LD_LIBRARY_PATH=${cudaPackages.cudatoolkit}/lib:$LD_LIBRARY_PATH
+            export LD_LIBRARY_PATH=${cudaPackages.cudnn}/lib:$LD_LIBRARY_PATH
+            export LD_LIBRARY_PATH=${cudaPackages.tensorrt}/lib:$LD_LIBRARY_PATH
+            export LD_LIBRARY_PATH=${stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH
+            export LD_LIBRARY_PATH=${zlib}/lib:$LD_LIBRARY_PATH
           '';
+
+          runScript = ''poetry shell'';
+
+          targetPkgs = pkgs: (with pkgs; [
+            poetry
+            pyright
+            python312
+            quarto
+            ruff
+            ruff-lsp
+            tectonic
+          ]);
         };
       in {
         devShell = fhs.env;

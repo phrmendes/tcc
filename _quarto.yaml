@@ -2,7 +2,7 @@ format:
   pdf:
     cap-location: top
     colorlinks: true
-    csl: ./resources/references/abnt.csl
+    csl: abnt.csl
     fig-pos: "H"
     fontsize: 12pt
     geometry:
@@ -11,9 +11,9 @@ format:
       - left=2.5cm
       - right=2.5cm
     include-in-header:
-      - ./resources/tex/packages.tex
-      - ./resources/tex/commands.tex
-      - ./resources/tex/settings.tex
+      - ./quarto/headers/packages.tex
+      - ./quarto/headers/commands.tex
+      - ./quarto/headers/settings.tex
     keep-tex: true
     link-citations: true
     pdf-engine: tectonic
@@ -26,7 +26,7 @@ format:
     theme: simple
     transition: slide
 project:
-  output-dir: output
+  output-dir: ./quarto/output
   render:
     - project.qmd
     - thesis.qmd
