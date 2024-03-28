@@ -11,8 +11,8 @@ keywords = ["lstm", "machine learning", "steam", "sazonality"]
 [tool.pyright]
 typeCheckingMode = "basic"
 useLibraryCodeForTypes = true
-venvPath = "."
-venv = ".pixi"
+venvPath = "./.mamba/envs/"
+venv = "thesis"
 
 [tool.jupytext]
 formats = "ipynb,py:percent"
