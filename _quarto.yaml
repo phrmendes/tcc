@@ -2,7 +2,7 @@ format:
   pdf:
     cap-location: top
     colorlinks: true
-    csl: abnt.csl
+    csl: ./quarto/abnt.csl
     fig-pos: "H"
     fontsize: 12pt
     geometry:
@@ -11,9 +11,9 @@ format:
       - left=2.5cm
       - right=2.5cm
     include-in-header:
-      - ./quarto/headers/packages.tex
-      - ./quarto/headers/commands.tex
-      - ./quarto/headers/settings.tex
+      - ./quarto/tex/packages.tex
+      - ./quarto/tex/commands.tex
+      - ./quarto/tex/settings.tex
     keep-tex: true
     link-citations: true
     pdf-engine: tectonic

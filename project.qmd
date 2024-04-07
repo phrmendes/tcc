@@ -68,7 +68,7 @@ Os trabalhos de @shaferTutorialConformalPrediction2008 e @angelopoulosGentleIntr
 # Cronograma
 
 ```{=tex}
-\input{./resources/tex/planning.tex}
+\input{./quarto/tex/planning.tex}
 ```
 
 # Referências
