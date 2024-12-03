@@ -24,7 +24,7 @@
         devShells.default = with pkgs;
           mkShell {
             packages = [
-              python312
+              python313
               quarto
               tectonic
               uv
