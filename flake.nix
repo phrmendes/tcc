@@ -6,6 +6,11 @@
     utils.url = "github:numtide/flake-utils";
   };
 
+  nixConfig = {
+    extra-substituters = ["https://cuda-maintainers.cachix.org"];
+    extra-trusted-public-keys = ["cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="];
+  };
+
   outputs = {
     utils,
     nixpkgs,
@@ -41,10 +46,12 @@
             '';
 
             LD_LIBRARY_PATH = lib.makeLibraryPath [
-              stdenv.cc.cc
-              zlib
               cudaPackages.cudatoolkit
               cudaPackages.cudnn
+              linuxPackages.nvidia_x11
+              stdenv.cc.cc
+              stdenv.cc.cc.lib
+              zlib
             ];
           };
       }
